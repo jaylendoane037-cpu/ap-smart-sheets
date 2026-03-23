@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP SmartSheets</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-papHhXuq8xFJfZlXhShqslZy2BvLGsT37MV8zpI3VxkR+ZcOoJ3eUc+g0dQK2aWmOQ/kZx4cL1I1k7tYqMf8xA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+    <div class="logo">AP SmartSheets</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="login.html" id="login-link">Login</a></li>
+        <div class="theme-switch">
+    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+    <label for="darkToggle" class="slider"></label>
+</div>
+    </ul>
+    <div id="user-greeting"></div>
+</nav>
+
+<section class="hero">
+    <h1>Study Efficiently and Score a 5 </h1>
+    <p>Cram guides that actually work!</p>
+    <!-- Only one set of hero buttons -->
+    <button class="go-dashboard-btn" onclick="goDashboard()">Go to Dashboard</button>
+    <button id="logout-btn" onclick="logout()">Logout</button>
+</section>
+
+
+<section class="products">
+    <div class="card">
+        <h2>📊 AP Statistics</h2>
+        <p>Formulas + probability shortcuts + FRQ magic</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Statistics_Cram_Guide.pdf" download>
+           <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>📈 AP Macroeconomics</h2>
+        <p>Graphs mastery + policy breakdowns</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Macroeconomics_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🧬 AP Biology</h2>
+        <p>Formulas + concepts + practice tips</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Biology_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🏛️ AP Government</h2>
+        <p>Key terms + policies + court cases</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>✏️ AP Calculus</h2>
+        <p>Key terms + formulas</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🌏 AP World History</h2>
+        <p>Key terms</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🌎 AP Human Geography</h2>
+        <p>Key terms + policies + court cases</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🧪 AP Chemistry</h2>
+        <p>Key terms + policies + court cases</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2> AP Microeconomics</h2>
+        <p>Key terms + policies + court cases</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>🧠 AP Psychology</h2>
+        <p>Key terms + policies + court cases</p>
+        <div class="price">$29</div>
+        <a href="guides/AP_Government_Cram_Guide.pdf" download>
+            <button class="locked-btn" onclick="unlockGuide()">🔒 Locked</button>
+        </a>
+    </div>
+</section>
+
+
+<footer>
+    Made For Stressed AP Students
+    <footer class="site-footer">
+
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <h3>AP SmartSheets</h3>
+      <p>Helping students score a 5 on every AP exam </p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2026 AP Cram Club. All rights reserved.
+  </p>
+
+
+</footer>
+
+<script src="script.js"></script>
+<script>
+
+let accessGranted = false
+const ACCESS_CODE = "APSMART2026"
+
+function unlockGuide(){
+
+    if(accessGranted){
+        window.location.href = "downloads.html"
+        return
+    }
+
+    let code = prompt("Enter access code or purchase code")
+
+    if(code === ACCESS_CODE){
+
+        accessGranted = true
+
+        alert("Access granted!")
+
+        document.querySelectorAll(".locked-btn").forEach(btn=>{
+            btn.innerHTML = "⬇ Download"
+            btn.classList.remove("locked-btn")
+            btn.classList.add("download-btn")
+        })
+
+    } else {
+
+        alert("Incorrect code")
+
+    }
+
+}
+
+
+
+</script>
+</body>
+</html>

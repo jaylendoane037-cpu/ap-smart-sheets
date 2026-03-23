@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – AP SmartSheets</title>
+<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-papHhXuq8xFJfZlXhShqslZy2BvLGsT37MV8zpI3VxkR+ZcOoJ3eUc+g0dQK2aWmOQ/kZx4cL1I1k7tYqMf8xA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav-bar">
+    <div class="logo">AP SmartSheets</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="login.html" id="login-link">Login</a></li>
+        <div class="theme-switch">
+    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+    <label for="darkToggle" class="slider"></label>
+</div>
+    </ul>
+    <div id="user-greeting"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Contact Us 💌</h1>
+    <p>Questions, feedback, or just saying hi? We’d love to hear from you.</p>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="content">
+    <form id="contact-form" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name " required>
+        <input type="email" id="email" placeholder="Your Email " required>
+        <textarea id="message" rows="5" placeholder="Your Message " required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <p id="success-msg" class="success-msg">Message sent! 💕 We’ll get back to you soon.</p>
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <h3>AP SmartSheets</h3>
+      <p>Helping students score a 5 on every AP exam </p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2026 AP Cram Club. All rights reserved.
+  </p>
+
+
+</footer>
+
+<script>
+const form = document.getElementById("contact-form");
+const successMsg = document.getElementById("success-msg");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    successMsg.style.display = "block";
+    form.reset();
+});
+</script>
+<script>
+function goDashboard() {
+    if (localStorage.getItem("userEmail")) {
+        window.location.href = "dashboard.html";
+    } else {
+        window.location.href = "login.html";
+    }
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>
