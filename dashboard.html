@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - AP SmartSheets</title>
+<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-papHhXuq8xFJfZlXhShqslZy2BvLGsT37MV8zpI3VxkR+ZcOoJ3eUc+g0dQK2aWmOQ/kZx4cL1I1k7tYqMf8xA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav-bar">
+    <div class="logo">AP SmartSheets</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="login.html" id="login-link">Login</a></li>
+        <div class="theme-switch">
+    <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()">
+    <label for="darkToggle" class="slider"></label>
+</div>
+    </ul>
+    <div id="user-greeting"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Study Efficiently and Score a 5</h1>
+    <p>Cram guides that actually work!</p>
+    <!-- Hero buttons -->
+    <button class="go-dashboard-btn" onclick="goDashboard()">Go to Dashboard</button>
+    <button id="logout-btn" onclick="logout()">Logout</button>
+</section>
+
+<!-- Progress Cards Container -->
+<section class="progress-cards">
+    <div class="card">
+        <h2>Your Progress</h2>
+        <p>AP Biology</p>
+        <progress value="20" max="100"></progress>
+    </div>
+
+    <div class="card">
+        <h2>Your Progress</h2>
+        <p>AP Statistics</p>
+        <progress value="60" max="100"></progress>
+    </div>
+
+    <div class="card">
+        <h2>Your Progress</h2>
+        <p>AP Macroeconomics</p>
+        <progress value="40" max="100"></progress>
+    </div>
+
+    <div class="card">
+        <h2>Your Progress</h2>
+        <p>AP Government</p>
+        <progress value="80" max="100"></progress>
+    </div>
+</section>
+
+<p id="countdown"></p>
+
+<section class="hero">
+    <h1 id="welcome-text">Welcome </h1>
+    <p>Your study guides are ready!</p>
+</section>
+
+<section class="products">
+    <div class="card">
+        <h2>📊 AP Statistics</h2>
+        <p>Your full cram guide</p>
+        <button onclick="downloadGuide('stats')">Download</button>
+    </div>
+
+    <div class="card">
+        <h2>📈 AP Macroeconomics</h2>
+        <p>Your full cram guide</p>
+        <button onclick="downloadGuide('macro')">Download</button>
+    </div>
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-content">
+
+    <div class="footer-left">
+      <h3>AP SmartSheets</h3>
+      <p>Helping students score a 5 on every AP exam </p>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+
+  </div>
+
+  <p class="copyright">
+    © 2026 AP Cram Club. All rights reserved.
+  </p>
+
+
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* Protect dashboard if not logged in */
+const userEmail = localStorage.getItem("userEmail");
+if (!userEmail) {
+    window.location.href = "login.html";
+} else {
+    document.getElementById("welcome-text").innerText =
+        "Welcome, " + userEmail + " 💖";
+}
+</script>
+</body>
+</html>
